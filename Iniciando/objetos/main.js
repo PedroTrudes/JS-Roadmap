@@ -34,6 +34,7 @@ let pessoa = [{
     "corSelecionada": null
 }]
 
+
 console.log(pessoa)// pegando todos os dados
 console.log(pessoa.estaAprovado)// pegando algum dado especifico 
 console.log(pessoa[1])// pegando um array só
@@ -66,5 +67,23 @@ let animais = {
     "Gato" : "animal03",
 }
 
+animais.Cachorro = "teste";//trocando um valor já existente
+//animais[Cavalo] = "teste02"; //inserindo um objeto e um valor inexistente 
+Object.defineProperty(animais, "Cobra", {
+    value: "teste",
+    writable: false
+})
+
+Object.defineProperties(animais, {
+    cabra: {
+        value: 1,
+        writable: true
+    },
+    anta: {
+        value: 2,
+        writable: false
+    }
+})
+console.log(animais)
 const animaisArray = Object.entries(animais);// transformando um objeto em array
 console.log(animaisArray);
